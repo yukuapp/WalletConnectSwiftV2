@@ -80,12 +80,14 @@ Pod::Spec.new do |spec|
     ss.dependency 'WalletConnectSwiftV2/WalletConnectAuth'
     ss.dependency 'WalletConnectSwiftV2/WalletConnectPush'
     ss.dependency 'WalletConnectSwiftV2/WalletConnectVerify'
+    ss.resource_bundles = {'Web3Wallet' => ['Sources/Web3Wallet/Resources/PrivacyInfo.xcprivacy']}
   end
 
   spec.subspec 'WalletConnectSign' do |ss|
     ss.source_files = 'Sources/WalletConnectSign/**/*.{h,m,swift}'
     ss.dependency 'WalletConnectSwiftV2/WalletConnectPairing'
     ss.dependency 'WalletConnectSwiftV2/WalletConnectVerify'
+    ss.resource_bundles = {'WalletConnectSign' => ['Sources/WalletConnectSign/Resources/PrivacyInfo.xcprivacy']}
   end
 
   spec.subspec 'WalletConnectAuth' do |ss|
@@ -99,6 +101,7 @@ Pod::Spec.new do |spec|
     ss.source_files = 'Sources/WalletConnectVerify/**/*.{h,m,swift}'
     ss.dependency 'WalletConnectSwiftV2/WalletConnectUtils'
     ss.dependency 'WalletConnectSwiftV2/WalletConnectNetworking'
+    ss.resource_bundles = {'WalletConnectVerify' => ['Sources/WalletConnectVerify/Resources/PrivacyInfo.xcprivacy']}
   end
 
   spec.subspec 'WalletConnectHistory' do |ss|
@@ -128,12 +131,14 @@ Pod::Spec.new do |spec|
     ss.source_files = 'Sources/WalletConnectIdentity/**/*.{h,m,swift}'
     ss.dependency 'WalletConnectSwiftV2/WalletConnectNetworking'
     ss.dependency 'WalletConnectSwiftV2/WalletConnectJWT'
+    ss.resource_bundles = {'WalletConnectIdentity' => ['Sources/WalletConnectIdentity/Resources/PrivacyInfo.xcprivacy']}
   end
 
   spec.subspec 'WalletConnectPush' do |ss|
     ss.source_files = 'Sources/WalletConnectPush/**/*.{h,m,swift}'
     ss.dependency 'WalletConnectSwiftV2/WalletConnectNetworking'
     ss.dependency 'WalletConnectSwiftV2/WalletConnectJWT'
+    ss.resource_bundles = {'WalletConnectPush' => ['Sources/WalletConnectPush/Resources/PrivacyInfo.xcprivacy']}
   end
 
   spec.subspec 'WalletConnectJWT' do |ss|
@@ -145,11 +150,13 @@ Pod::Spec.new do |spec|
     ss.source_files = 'Sources/WalletConnectNetworking/**/*.{h,m,swift}'
     ss.dependency 'WalletConnectSwiftV2/WalletConnectRelay'
     ss.dependency 'WalletConnectSwiftV2/HTTPClient'
+    ss.resource_bundles = {'WalletConnectNetworking' => ['Sources/WalletConnectNetworking/Resources/PrivacyInfo.xcprivacy']}
   end
 
   spec.subspec 'WalletConnectPairing' do |ss|
     ss.source_files = 'Sources/WalletConnectPairing/**/*.{h,m,swift}'
     ss.dependency 'WalletConnectSwiftV2/WalletConnectNetworking'
+    ss.resource_bundles = {'WalletConnectPairing' => ['Sources/WalletConnectPairing/Resources/PrivacyInfo.xcprivacy']}
   end
 
   spec.subspec 'WalletConnectRouter' do |ss|
@@ -163,7 +170,8 @@ Pod::Spec.new do |spec|
     ss.resource_bundles = {
       'WalletConnect_WalletConnectRelay' => [
          'Sources/WalletConnectRelay/PackageConfig.json'
-      ]
+      ],
+      'WalletConnectRelay' => ['Sources/WalletConnectRelay/Resources/PrivacyInfo.xcprivacy']
     }
   end
 
@@ -195,6 +203,7 @@ Pod::Spec.new do |spec|
     ss.dependency 'WalletConnectSwiftV2/WalletConnectSign'
     ss.dependency 'DSF_QRCode', '~> 16.1.1'
     ss.platform = :ios
+    ss.resource_bundles = {'WalletConnectModal' => ['Sources/WalletConnectModal/Resources/PrivacyInfo.xcprivacy']}
     # TODO: Re-add macOS nad tvOS support once fixed
   end
 end

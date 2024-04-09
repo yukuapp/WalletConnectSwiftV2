@@ -12,43 +12,51 @@ let package = Package(
     products: [
         .library(
             name: "WalletConnect",
-            targets: ["WalletConnectSign"]),
+            targets: ["WalletConnectSign"],
+            resources: [.process("Resources/PrivacyInfo.xcprivacy")]),
         .library(
             name: "WalletConnectChat",
-            targets: ["WalletConnectChat"]),
+            targets: ["WalletConnectChat"]]),
         .library(
             name: "WalletConnectAuth",
             targets: ["Auth"]),
         .library(
             name: "Web3Wallet",
-            targets: ["Web3Wallet"]),
+            targets: ["Web3Wallet"],
+            resources: [.process("Resources/PrivacyInfo.xcprivacy")]),
         .library(
             name: "WalletConnectPairing",
-            targets: ["WalletConnectPairing"]),
+            targets: ["WalletConnectPairing"],
+            resources: [.process("Resources/PrivacyInfo.xcprivacy")]),
         .library(
             name: "WalletConnectNotify",
-            targets: ["WalletConnectNotify"]),
+            targets: ["WalletConnectNotify"],
+            resources: [.process("Resources/PrivacyInfo.xcprivacy")]),
         .library(
             name: "WalletConnectPush",
-            targets: ["WalletConnectPush"]),
+            targets: ["WalletConnectPush"],
+            resources: [.process("Resources/PrivacyInfo.xcprivacy")]),
         .library(
             name: "WalletConnectRouter",
             targets: ["WalletConnectRouter", "WalletConnectRouterLegacy"]),
         .library(
             name: "WalletConnectNetworking",
-            targets: ["WalletConnectNetworking"]),
+            targets: ["WalletConnectNetworking"],
+            resources: [.process("Resources/PrivacyInfo.xcprivacy")]),
         .library(
             name: "WalletConnectSync",
             targets: ["WalletConnectSync"]),
         .library(
             name: "WalletConnectVerify",
-            targets: ["WalletConnectVerify"]),
+            targets: ["WalletConnectVerify"],
+            resources: [.process("Resources/PrivacyInfo.xcprivacy")]),
         .library(
             name: "WalletConnectHistory",
             targets: ["WalletConnectHistory"]),
         .library(
             name: "WalletConnectModal",
-            targets: ["WalletConnectModal"]),
+            targets: ["WalletConnectModal"],
+            resources: [.process("Resources/PrivacyInfo.xcprivacy")]),
 
     ],
     dependencies: [

@@ -12,52 +12,43 @@ let package = Package(
     products: [
         .library(
             name: "WalletConnect",
-            targets: ["WalletConnectSign"],
-            resources: [.process("Resources/PrivacyInfo.xcprivacy")]),
+            targets: ["WalletConnectSign"]),
         .library(
             name: "WalletConnectChat",
-            targets: ["WalletConnectChat"]]),
+            targets: ["WalletConnectChat"]),
         .library(
             name: "WalletConnectAuth",
             targets: ["Auth"]),
         .library(
             name: "Web3Wallet",
-            targets: ["Web3Wallet"],
-            resources: [.process("Resources/PrivacyInfo.xcprivacy")]),
+            targets: ["Web3Wallet"]),
         .library(
             name: "WalletConnectPairing",
-            targets: ["WalletConnectPairing"],
-            resources: [.process("Resources/PrivacyInfo.xcprivacy")]),
+            targets: ["WalletConnectPairing"]),
         .library(
             name: "WalletConnectNotify",
-            targets: ["WalletConnectNotify"],
-            resources: [.process("Resources/PrivacyInfo.xcprivacy")]),
+            targets: ["WalletConnectNotify"]),
         .library(
             name: "WalletConnectPush",
-            targets: ["WalletConnectPush"],
-            resources: [.process("Resources/PrivacyInfo.xcprivacy")]),
+            targets: ["WalletConnectPush"]),
         .library(
             name: "WalletConnectRouter",
             targets: ["WalletConnectRouter", "WalletConnectRouterLegacy"]),
         .library(
             name: "WalletConnectNetworking",
-            targets: ["WalletConnectNetworking"],
-            resources: [.process("Resources/PrivacyInfo.xcprivacy")]),
+            targets: ["WalletConnectNetworking"]),
         .library(
             name: "WalletConnectSync",
             targets: ["WalletConnectSync"]),
         .library(
             name: "WalletConnectVerify",
-            targets: ["WalletConnectVerify"],
-            resources: [.process("Resources/PrivacyInfo.xcprivacy")]),
+            targets: ["WalletConnectVerify"]),
         .library(
             name: "WalletConnectHistory",
             targets: ["WalletConnectHistory"]),
         .library(
             name: "WalletConnectModal",
-            targets: ["WalletConnectModal"],
-            resources: [.process("Resources/PrivacyInfo.xcprivacy")]),
-
+            targets: ["WalletConnectModal"]),
     ],
     dependencies: [
         .package(url: "https://github.com/apple/swift-docc-plugin", from: "1.3.0"),
@@ -67,7 +58,8 @@ let package = Package(
         .target(
             name: "WalletConnectSign",
             dependencies: ["WalletConnectPairing", "WalletConnectVerify"],
-            path: "Sources/WalletConnectSign"),
+            path: "Sources/WalletConnectSign",
+            resources: [.process("Resources/PrivacyInfo.xcprivacy")]),
         .target(
             name: "WalletConnectChat",
             dependencies: ["WalletConnectIdentity", "WalletConnectSync", "WalletConnectHistory"],
@@ -75,11 +67,13 @@ let package = Package(
         .target(
             name: "Auth",
             dependencies: ["WalletConnectPairing", "WalletConnectSigner", "WalletConnectVerify"],
-            path: "Sources/Auth"),
+            path: "Sources/Auth",
+            resources: [.process("Resources/PrivacyInfo.xcprivacy")]),
         .target(
             name: "Web3Wallet",
             dependencies: ["Auth", "WalletConnectSign", "WalletConnectPush", "WalletConnectVerify"],
-            path: "Sources/Web3Wallet"),
+            path: "Sources/Web3Wallet",
+            resources: [.process("Resources/PrivacyInfo.xcprivacy")]),
         .target(
             name: "WalletConnectNotify",
             dependencies: ["WalletConnectPairing", "WalletConnectPush", "WalletConnectIdentity", "WalletConnectSigner", "Database"],
@@ -147,7 +141,8 @@ let package = Package(
             exclude: ["Secrets/secrets.json.sample"],
             resources: [
                 .copy("Secrets/secrets.json"),
-                .copy("Resources/Assets.xcassets")
+                .copy("Resources/Assets.xcassets"),
+                .process("Resources/PrivacyInfo.xcprivacy")
             ]
         ),
         .target(
